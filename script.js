@@ -575,3 +575,29 @@ Arthur remained very worried
  Oh yes   said Arthur   and how far s that   
 
  About twelve minutes away   said Ford   come on  I need a drink   `
+ let splitted = text.toLowerCase().split("");
+ let result = splitted.reduce((acc,curr) => {
+     
+     if (acc[curr] === undefined) {
+          acc[curr] = 1
+     }else{acc[curr]++}
+         return acc
+
+ },{})
+ console.log(result)
+
+
+// sort
+let resultArray =Object.entries(result)
+ let sorted = resultArray.sort((a,b) => b[1] - a[1])
+ console.log(sorted)
+
+//  filter
+let myFilter = sorted.filter((arr) => arr[1] > 50)
+console.log(myFilter)
+
+// let tenLast = sorted.filter((arr) => arr[1] <=25
+// )  this is the same like the slice below!!
+
+ let tenLast = sorted.slice(-10)
+console.log(tenLast)
